@@ -15,4 +15,5 @@ else
     apt install docker-ce -y
     usermod -aG docker ${USER}
     apt  install docker-compose -y
+    sudo chmod 666 /var/run/docker.sock
 fi
