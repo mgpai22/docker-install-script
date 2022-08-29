@@ -13,7 +13,8 @@ else
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
     apt update
     apt install docker-ce -y
-    usermod -aG docker ${USER}
-    apt  install docker-compose -y
     sudo chmod 666 /var/run/docker.sock
+    usermod -aG docker ${USER}
+    sudo curl -L "https://github.com/docker/compose/releases/download/v2.10.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    sudo chmod +x /usr/local/bin/docker-compose
 fi
